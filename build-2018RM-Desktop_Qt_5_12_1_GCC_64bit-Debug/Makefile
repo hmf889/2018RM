@@ -17,7 +17,7 @@ CXX           = g++
 DEFINES       = -DQT_NO_WARNING_OUTPUT -DQT_NO_DEBUG_OUTPUT -DQT_QML_DEBUG
 CFLAGS        = -pipe -g -Wall -W -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -fPIC $(DEFINES)
-INCPATH       = -I../2018RM -I. -I/usr/local/zed/include -I/usr/local/cuda-10.0/include -I../../../Qt5.12.1/5.12.1/gcc_64/mkspecs/linux-g++
+INCPATH       = -I../2018RM -I. -I/usr/local/zed/include -I../2018RM/findtarget.h -I/usr/local/cuda-10.0/include -I../../../Qt5.12.1/5.12.1/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/dukeye/Qt5.12.1/5.12.1/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -741,7 +741,8 @@ main.o: ../2018RM/main.cpp ../2018RM/getfile.h \
 		/usr/local/cuda-10.0/include/device_launch_parameters.h \
 		/usr/local/zed/include/sl_core/mapping/Mesh.hpp \
 		/usr/local/zed/include/sl_zed/defines.hpp \
-		../2018RM/SaveDepth.hpp
+		../2018RM/SaveDepth.hpp \
+		../2018RM/findtarget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../2018RM/main.cpp
 
 getfile.o: ../2018RM/getfile.cpp ../2018RM/getfile.h
@@ -808,7 +809,7 @@ SaveDepth.o: ../2018RM/SaveDepth.cpp ../2018RM/SaveDepth.hpp \
 		/usr/local/zed/include/sl_zed/defines.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o SaveDepth.o ../2018RM/SaveDepth.cpp
 
-findtarget.o: ../2018RM/findtarget.cpp 
+findtarget.o: ../2018RM/findtarget.cpp ../2018RM/findtarget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o findtarget.o ../2018RM/findtarget.cpp
 
 ####### Install

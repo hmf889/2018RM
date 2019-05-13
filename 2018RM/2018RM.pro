@@ -15,7 +15,8 @@ HEADERS += \
     getfile.h \
     SaveDepth.hpp \
     findtarget.h
-INCLUDEPATH +=/usr/local/zed/include
+INCLUDEPATH +=/usr/local/zed/include \
+    findtarget.h
 INCLUDEPATH +=/usr/local/cuda-10.0/include
 DEFINES += QT_NO_WARNING_OUTPUT\
                      QT_NO_DEBUG_OUTPUT
