@@ -17,8 +17,8 @@
 #include<sl/Camera.hpp>
 #include<SaveDepth.hpp>
 #include<opencv2/imgproc/imgproc.hpp>
-#include <assert.h>
-#include <cuda_runtime.h>
+#include<assert.h>
+#include<cuda_runtime.h>
 #include<findtarget.h>
 using namespace std;
 //using namespace sl;
@@ -453,13 +453,14 @@ int main(void)
 
         video_light>>testLight;
         findTarget(testLight, targetPoint);
-        cout<<"四个顶点为："<<endl;
+        /*cout<<"四个顶点为："<<endl;
         for(int j=0;j<4;j++)
         {
             cout<<targetPoint[j];
             cout<<endl;
         }
         cv::waitKey(30);
+        */
     }
 
 

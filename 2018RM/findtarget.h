@@ -11,5 +11,7 @@
 #include<sys/types.h>
 #include<sys/stat.h>
 #include<opencv/cv.hpp>
+#include <math.h>
 void findTarget(cv::Mat target,cv::Point2f [4]);
+//void correctPoints(cv::Point2f example[4],cv::Point2f  targetPoint[4]);
 #endif // FINDTARGET_H
